@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEOST</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+
+    </header>
+    <section class="parallax">
+        <h2 id="titulo" class="titulo">NEOST</h2>
+        <img src="./images/a.png" id="a">
+        <img src="./images/o.png" id="o">
+        <img src="./images/i.png" id="i">
+        <img src="./images/e.png" id="e">
+        <img src="./images/u.png" id="u">
+        <img src="./images/b.png" id="b">
+    </section>
+    <script src="./js/main.js"></script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEOST - Uniformes Que Identifican | Confección de Uniformes, Trajes y Calzado</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#1e293b',
+                            900: '#0f172a',
+                            950: '#0a192f',
+                        },
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            700: '#b45309',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Parallax Background Effects */
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* Glassmorphism Navigation & Cards */
+        .glass-header {
+            background: rgba(10, 25, 47, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+        }
+
+        /* 3D Tilt & Micro-interactions */
+        .card-tilt {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .card-tilt:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 30px -10px rgba(10, 25, 47, 0.15);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d97706;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #b45309;
+        }
+
+        /* Hide elements before scroll reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 bg-slate-50 antialiased selection:bg-gold-500 selection:text-white">
+
+    <!-- Sticky Navigation Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-header border-b border-slate-800/50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo -->
+                    <div class="h-12 w-auto flex items-center justify-center p-1 bg-white/90 rounded-lg shadow-md group-hover:scale-105 transition-transform">
+                        <img src="/images/escudo.-removebg-preview.png" alt="NEOST Logo" class="h-10 w-auto object-contain">
+                    </div>
+                    <div>
+                        <span class="text-xl font-extrabold text-white tracking-widest block leading-none">N E <span class="text-gold-500">O S T</span></span>
+                        <span class="text-[9px] text-slate-300 tracking-wider uppercase block mt-1 font-medium">Uniformes Que Identifican</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex space-x-8">
+            
+                    <a href="#nosotros" class="text-slate-300 hover:text-gold-400 font-medium text-sm transition-colors py-2 border-b-2 border-transparent hover:border-gold-500">Nosotros</a>
+                    <a href="#taller" class="text-slate-300 hover:text-gold-400 font-medium text-sm transition-colors py-2 border-b-2 border-transparent hover:border-gold-500">Proceso Taller</a>
+                    <a href="#servicios" class="text-slate-300 hover:text-gold-400 font-medium text-sm transition-colors py-2 border-b-2 border-transparent hover:border-gold-500">Servicios</a>
+                    <a href="#productos" class="text-slate-300 hover:text-gold-400 font-medium text-sm transition-colors py-2 border-b-2 border-transparent hover:border-gold-500">Catálogo</a>
+                    <a href="#contacto" class="text-slate-300 hover:text-gold-400 font-medium text-sm transition-colors py-2 border-b-2 border-transparent hover:border-gold-500">Cotizador</a>
+                </nav>
+
+                <!-- Action Button & Cart Trigger -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <button onclick="toggleCartModal()" class="relative p-2 text-slate-300 hover:text-gold-400 transition-colors" title="Ver Carrito / Cotización">
+                        <i class="fa-solid fa-cart-shopping text-xl"></i>
+                        <span id="cart-badge" class="absolute -top-1 -right-1 bg-gold-500 text-navy-950 font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center">0</span>
+                    </button>
+                    <a href="#contacto" class="bg-gradient-to-r from-gold-600 to-gold-500 hover:from-gold-500 hover:to-gold-400 text-navy-950 font-bold text-sm px-5 py-2.5 rounded-lg shadow-lg hover:shadow-gold-500/20 transition-all">
+                        Pedir Cotización
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center space-x-3">
+                    <button onclick="toggleCartModal()" class="relative p-2 text-slate-300">
+                        <i class="fa-solid fa-cart-shopping text-xl"></i>
+                        <span id="cart-badge-mobile" class="absolute -top-1 -right-1 bg-gold-500 text-navy-950 font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center">0</span>
+                    </button>
+                    <button onclick="toggleMobileMenu()" class="text-slate-300 hover:text-white p-2">
+                        <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-navy-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-gold-400 py-2 text-base font-medium">Inicio</a>
+            <a href="#nosotros" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-gold-400 py-2 text-base font-medium">Nosotros</a>
+            <a href="#taller" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-gold-400 py-2 text-base font-medium">Proceso Taller</a>
+            <a href="#servicios" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-gold-400 py-2 text-base font-medium">Servicios & Paquetes</a>
+            <a href="#productos" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-gold-400 py-2 text-base font-medium">Catálogo de Productos</a>
+            <a href="#contacto" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-gold-400 py-2 text-base font-medium">Contacto & Cotizador</a>
+            <a href="#contacto" onclick="toggleMobileMenu()" class="block w-full text-center bg-gold-500 text-navy-950 font-bold py-3 rounded-lg mt-4">Cotizar Ahora</a>
+        </div>
+    </header>
+
+    <!-- SECTION B: NOSOTROS & PROCESO DE TALLER -->
+    <section id="nosotros" class="py-24 bg-slate-900 text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <h2 class="text-gold-500 font-bold uppercase tracking-wider text-sm mb-2">Conoce Nuestra Historia</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">Tradición Textil y Tecnología de Vanguardia</p>
+                <div class="w-20 h-1 bg-gold-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Brand Story & Mission -->
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-20 reveal">
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold text-white">Más de 20 años vestindo a las mejores instituciones</h3>
+                    <p class="text-slate-300 leading-relaxed">
+                        NEOST nació como un proyecto dedicado a la confección y diseño de prendas, con el propósito de ofrecer uniformes de calidad que respondan a las necesidades de estudiantes, empresas, equipos deportivos y diferentes organizaciones. El proyecto surgió al identificar la importancia de contar con prendas cómodas, resistentes y con diseños personalizados que representen la identidad de cada institución o grupo.
+
+Con el tiempo, NEOST ha orientado su trabajo hacia la elaboración de uniformes escolares, universitarios, deportivos y empresariales, además de dotaciones y diseños personalizados. Su actividad está relacionada con la confección de prendas en Campoalegre, Huila.
+
+
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 pt-4">
+                        <div class="bg-slate-800/60 p-4 rounded-xl border border-slate-700">
+                            <h4 class="text-gold-400 font-bold text-2xl">100K+</h4>
+                            <p class="text-xs text-slate-400">Prendas entregadas al año</p>
+                        </div>
+                        <div class="bg-slate-800/60 p-4 rounded-xl border border-slate-700">
+                            <h4 class="text-gold-400 font-bold text-2xl">99.8%</h4>
+                            <p class="text-xs text-slate-400">Puntualidad en contratos</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1528698827591-e19ccd7bc23d?q=80&w=1000&auto=format&fit=crop" alt="Taller de Confección" class="rounded-2xl shadow-2xl border-2 border-slate-700 w-full object-cover h-80">
+                    <div class="absolute -bottom-6 -left-6 bg-gold-500 text-navy-950 p-6 rounded-2xl font-bold shadow-xl hidden sm:block">
+                        <i class="fa-solid fa-shield-check text-3xl mb-1 block"></i>
+                        Garantía Extendida de 1 Año
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mission, Vision & Values -->
+            <div class="grid md:grid-cols-3 gap-8 mb-24 reveal">
+                <div class="bg-slate-800/80 p-8 rounded-2xl border border-slate-700 hover:border-gold-500/50 transition-all card-tilt">
+                    <div class="w-12 h-12 bg-gold-500/20 text-gold-400 rounded-lg flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Nuestra Misión</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">En NEOST trabajamos para diseñar y confeccionar uniformes y prendas personalizadas que combinen calidad, comodidad, creatividad y buena presentación, ofreciendo soluciones que se adapten a las necesidades de nuestros clientes y representen la identidad de cada institución, empresa o equipo.</p>
+                </div>
+
+                <div class="bg-slate-800/80 p-8 rounded-2xl border border-slate-700 hover:border-gold-500/50 transition-all card-tilt">
+                    <div class="w-12 h-12 bg-gold-500/20 text-gold-400 rounded-lg flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Nuestra Visión</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">Ser una empresa reconocida en Huila y a nivel nacional por la calidad de sus confecciones, sus diseños innovadores y la atención a sus clientes, creciendo constantemente para ofrecer nuevos productos y soluciones en el sector de la confección.</p>
+                </div>
+
+                <div class="bg-slate-800/80 p-8 rounded-2xl border border-slate-700 hover:border-gold-500/50 transition-all card-tilt">
+                    <div class="w-12 h-12 bg-gold-500/20 text-gold-400 rounded-lg flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-gem"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Valores Guía</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">Precisión en la costura, compromiso ético con los trabajadores, honestidad en los costos y puntualidad absoluta en la entrega institucional.</p>
+                </div>
+            </div>
+
+            <!-- Workshop Process & Tools Section -->
+            <div id="taller" class="pt-10">
+                <div class="text-center max-w-3xl mx-auto mb-12 reveal">
+                    <span class="bg-gold-500/20 text-gold-400 text-xs font-bold px-3 py-1 rounded-full uppercase">Ingeniería Textil</span>
+                    <h2 class="text-3xl font-bold text-white mt-3">Proceso de Confección & Equipamiento Industrial</h2>
+                    <p class="text-slate-400 text-sm mt-2">Cómo fabricamos tus prendas en nuestra propia planta sin intermediarios</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 reveal">
+                    <!-- Step 1 -->
+                    <div class="bg-slate-800/50 rounded-xl overflow-hidden border border-slate-700">
+                        <img src="https://images.unsplash.com/photo-1590736969955-71cc94801759?q=80&w=600&auto=format&fit=crop" alt="Patronaje" class="h-44 w-full object-cover">
+                        <div class="p-5">
+                            <span class="text-gold-500 font-bold text-xs uppercase block mb-1">Paso 1</span>
+                            <h4 class="font-bold text-white text-lg mb-2">Diseño y Patronaje CAD</h4>
+                            <p class="text-slate-400 text-xs leading-relaxed">Diseño digitalizado con tolerancia milimétrica para un calce perfecto en cada talle.</p>
+                        </div>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="bg-slate-800/50 rounded-xl overflow-hidden border border-slate-700">
+                        <img src="/images/best_fabric-1200-a275ad00.webp" alt="Corte y Telas" class="h-44 w-full object-cover">
+                        <div class="p-5">
+                            <span class="text-gold-500 font-bold text-xs uppercase block mb-1">Paso 2</span>
+                            <h4 class="font-bold text-white text-lg mb-2">Corte Láser & Insumos</h4>
+                            <p class="text-slate-400 text-xs leading-relaxed">Mapeo de telas antifluido, dril y lana fría con mesas de extendido automático.</p>
+                        </div>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="bg-slate-800/50 rounded-xl overflow-hidden border border-slate-700">
+                        <img src="/images/5642e7badb97a7f44742854c1db1db63.jpg" alt="Bordado computarizado" class="h-44 w-full object-cover">
+                        <div class="p-5">
+                            <span class="text-gold-500 font-bold text-xs uppercase block mb-1">Paso 3</span>
+                            <h4 class="font-bold text-white text-lg mb-2">Bordado Computarizado</h4>
+                            <p class="text-slate-400 text-xs leading-relaxed">Cabezales industriales multicabezal para logotipos institucionales en alto relieve.</p>
+                        </div>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="bg-slate-800/50 rounded-xl overflow-hidden border border-slate-700">
+                        <img src="/images/images.jpg" alt="Planchado y Control" class="h-44 w-full object-cover">
+                        <div class="p-5">
+                            <span class="text-gold-500 font-bold text-xs uppercase block mb-1">Paso 4</span>
+                            <h4 class="font-bold text-white text-lg mb-2">Control & Planchado</h4>
+                            <p class="text-slate-400 text-xs leading-relaxed">Planchado al vapor industrial, rematado de hilos y auditoría final prenda por prenda.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Section -->
+            <div class="mt-20">
+                <div class="text-center max-w-2xl mx-auto mb-12 reveal">
+                    <h3 class="text-2xl font-bold text-white">Equipo Especialista en Confección</h3>
+                    <p class="text-slate-400 text-sm mt-1">Garantía de calidad respaldada por profesionales capacitados</p>
+                </div>
+
+                    <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700 text-center card-tilt">
+                        <img src="/images/images (1).jpg" alt="Norma Trujillo" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-2 border-gold-500">
+                        <h4 class="font-bold text-white text-lg">Norma Trujillo Guzmán</h4>
+                        <p class="text-gold-400 text-xs mb-3">Diseñadora Y Dueña de la empresa</p>
+                        <p class="text-slate-400 text-xs">Toma de decisiones: Dirigir el rumbo comercial y financiero del negocio.Gestión de clientes: Atender directamente las solicitudes de colegios, empresas y particulares para la confección de uniformes y trajes típicos.Supervisión de producción: Coordinar el taller de costura para garantizar el cumplimiento y la calidad de los pedidos..</p>
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION C: SERVICIOS Y PAQUETES INSTITUCIONALES -->
+    <section id="servicios" class="py-24 bg-slate-50 text-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="text-gold-600 font-bold uppercase tracking-wider text-xs">Soluciones Integrales</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-950 mt-1">Servicios de Confección & Paquetes</h2>
+                <p class="text-slate-600 text-base mt-2">Beneficios optimizados para instituciones educativas, corporaciones y compras al por mayor.</p>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20 reveal">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-xl transition-all card-tilt">
+                    <div class="w-12 h-12 bg-navy-950 text-gold-500 rounded-xl flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-ruler-combined"></i>
+                    </div>
+                    <h3 class="font-bold text-navy-950 text-lg mb-2">Confección a Medida</h3>
+                    <p class="text-slate-600 text-sm">Toma de tallas presencial en planteles educativos y empresas corporativas.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-xl transition-all card-tilt">
+                    <div class="w-12 h-12 bg-navy-950 text-gold-500 rounded-xl flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-boxes-stacked"></i>
+                    </div>
+                    <h3 class="font-bold text-navy-950 text-lg mb-2">Suministro Masivo</h3>
+                    <p class="text-slate-600 text-sm">Capacidad de producción para abastecer miles de prendas en plazos récord.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-xl transition-all card-tilt">
+                    <div class="w-12 h-12 bg-navy-950 text-gold-500 rounded-xl flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-stamp"></i>
+                    </div>
+                    <h3 class="font-bold text-navy-950 text-lg mb-2">Bordado & Grabado</h3>
+                    <p class="text-slate-600 text-sm">Escudos vectorizados y nombres personalizables en hilos de alta resistencia.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-xl transition-all card-tilt">
+                    <div class="w-12 h-12 bg-navy-950 text-gold-500 rounded-xl flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-socks"></i>
+                    </div>
+                    <h3 class="font-bold text-navy-950 text-lg mb-2">Calzado Corporativo</h3>
+                    <p class="text-slate-600 text-sm">Zapatos escolares y ejecutivos en cuero 100% con suela antideslizante.</p>
+                </div>
+            </div>
+
+            <!-- Transparent Packages / Price Ranges -->
+            <div class="bg-navy-950 text-white rounded-3xl p-8 sm:p-12 shadow-2xl reveal">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <h3 class="text-2xl sm:text-3xl font-bold">Paquetes Institucionales Sugeridos</h3>
+                    <p class="text-slate-400 text-sm mt-2">Precios transparentes y descuentos por volumen de pedido</p>
+                </div>
+
+                <div class="grid lg:grid-cols-3 gap-8">
+                    <!-- Package 1 -->
+                    <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 flex flex-col justify-between hover:border-gold-500 transition-all">
+                        <div>
+                            <span class="text-gold-400 font-bold text-xs uppercase tracking-wider block mb-2">Escolar Básico</span>
+                            <h4 class="text-2xl font-bold text-white mb-2">Dotación Diario</h4>
+                            <p class="text-3xl font-extrabold text-white mb-6">$45.00 <span class="text-xs font-normal text-slate-400">/ por alumno</span></p>
+                            <ul class="space-y-3 text-xs text-slate-300 mb-8">
+                                <li class="flex items-center"><i class="fa-solid fa-check text-gold-500 mr-2"></i>2 Camisas Polo Piqué Pima</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check text-gold-500 mr-2"></i>1 Pantalón / Falda en Antifluido</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check text-gold-500 mr-2"></i>Escudo bordado de alta precisión</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check text-gold-500 mr-2"></i>1 Par de calcetines oficiales</li>
+                            </ul>
+                        </div>
+                        <a href="#contacto" onclick="preselectPackage('Paquete Escolar Básico')" class="w-full text-center bg-slate-800 hover:bg-gold-500 hover:text-navy-950 font-bold py-3 rounded-xl transition-all text-sm block">Pedir Presupuesto</a>
+                    </div>
+
+                    <!-- Package 2 (Featured) -->
+                    <div class="bg-gradient-to-b from-slate-900 to-navy-900 p-8 rounded-2xl border-2 border-gold-500 flex flex-col justify-between relative shadow-xl">
+                        <span class="absolute -top-3 right-6 bg-gold-500 text-navy-950 text-[10px] font-extrabold px-3 py-1 rounded-full uppercase">Más Solicitado</span>
+                        <div>
+                            <span class="text-gold-400 font-bold text-xs uppercase tracking-wider block mb-2">Universitario / Técnico</span>
+                            <h4 class="text-2xl font-bold text-white mb-2">Set Profesional</h4>
+                            <p class="text-3xl font-extrabold text-white mb-6">$85.00 <span class="text-xs font-normal text-slate-400">/ por estudiante</span></p>
+                            <ul class="space-y-3 text-xs text-slate-300 mb-8">
+                                <li class="flex items-center"><i class="fa-solid fa-check text-gold-500 mr-2"></i>2 Camisas vestir manga larga/corta</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check text-gold-500 mr-2"></i>1 Blazer / Saco Institucional</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check text-gold-500 mr-2"></i>1 Pantalón / Falda de lana fría</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check text-gold-500 mr-2"></i>Corbata / Corbatín corporativo</li>
+                            </ul>
+                        </div>
+                        <a href="#contacto" onclick="preselectPackage('Paquete Universitario Premium')" class="w-full text-center bg-gold-500 hover:bg-gold-400 text-navy-950 font-bold py-3 rounded-xl transition-all text-sm block">Solicitar Muestra Gratis</a>
+                    </div>
+
+                    <!-- Package 3 -->
+                    <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 flex flex-col justify-between hover:border-gold-500 transition-all">
+                        <div>
+                            <span class="text-gold-400 font-bold text-xs uppercase tracking-wider block mb-2">Corporativo Ejecutivos</span>
+                            <h4 class="text-2xl font-bold text-white mb-2">Traje Sastrería</h4>
+                            <p class="text-3xl font-extrabold text-white mb-6">$140.00 <span class="text-xs font-normal text-slate-400">/ por colaborador</span></p>
+                            <ul class="space-y-3 text-xs text-slate-300 mb-8">
+                                <li class="flex items-center"><i class="fa-solid fa-check text-gold-500 mr-2"></i>Traje Completo 2 Piezas (Saco + Pantalón)</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check text-gold-500 mr-2"></i>2 Camisas 100% Algodón Egipcio</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check text-gold-500 mr-2"></i>Calzado en Cuero Genuine Mocasín/Oxford</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check text-gold-500 mr-2"></i>Ajustes a medida sin costo adicional</li>
+                            </ul>
+                        </div>
+                        <a href="#contacto" onclick="preselectPackage('Paquete Corporativo Ejecutivo')" class="w-full text-center bg-slate-800 hover:bg-gold-500 hover:text-navy-950 font-bold py-3 rounded-xl transition-all text-sm block">Agendar Visita Comercial</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION D: PRODUCTOS / CATÁLOGO INTERACTIVO -->
+    <section id="productos" class="py-24 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-gold-600 font-bold uppercase tracking-wider text-xs">Catálogo Interactivo</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-950 mt-1">Nuestra Colección Destacada</h2>
+                </div>
+
+                <!-- Category Filters -->
+                <div class="flex flex-wrap gap-2 mt-6 md:mt-0" id="filter-buttons">
+                    <button onclick="filterProducts('todos')" class="filter-btn active bg-navy-950 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all">Todos</button>
+                    <button onclick="filterProducts('escolar')" class="filter-btn bg-white text-slate-700 hover:bg-slate-200 px-4 py-2 rounded-lg text-sm font-semibold transition-all">Escolar</button>
+                    <button onclick="filterProducts('universitario')" class="filter-btn bg-white text-slate-700 hover:bg-slate-200 px-4 py-2 rounded-lg text-sm font-semibold transition-all">Universitario</button>
+                    <button onclick="filterProducts('trajes')" class="filter-btn bg-white text-slate-700 hover:bg-slate-200 px-4 py-2 rounded-lg text-sm font-semibold transition-all">Trajes & Sacos</button>
+                    <button onclick="filterProducts('calzado')" class="filter-btn bg-white text-slate-700 hover:bg-slate-200 px-4 py-2 rounded-lg text-sm font-semibold transition-all">Calzado</button>
+                </div>
+            </div>
+
+            <!-- Products Grid Container -->
+            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal">
+                <!-- Dynamic Javascript Insertion of Products -->
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION E: CONTÁCTANOS Y COTIZADOR DUAL -->
+    <section id="contacto" class="py-24 bg-navy-950 text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                
+                <!-- Left: Contact Details & Interactive Map -->
+                <div class="space-y-8 reveal">
+                    <div>
+                        <span class="text-gold-400 font-bold uppercase tracking-wider text-xs">Atención Directa</span>
+                        <h2 class="text-3xl font-extrabold text-white mt-1">Ubicación & Contacto</h2>
+                        <p class="text-slate-400 text-sm mt-2">Visita nuestro empresa de producción</p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 bg-gold-500/20 text-gold-400 rounded-lg flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Planta de Confección & Showroom</h4>
+                                <p class="text-slate-400 text-xs mt-1">Av. Industrial Textiles 450, Distrito Confeccionista, Edificio Élite</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 bg-gold-500/20 text-gold-400 rounded-lg flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Central Telefónica / WhatsApp</h4>
+                                <p class="text-slate-400 text-xs mt-1"><302 456 789></p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 bg-gold-500/20 text-gold-400 rounded-lg flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Atención Institucional</h4>
+                                <p class="text-slate-400 text-xs mt-1">gruponeost@hotmail.com</p>
+                        </div>
+                    </div>
+
+                    <!-- Simulated Interactive Workshop Map Card -->
+                    <div class="bg-slate-900 border border-slate-800 p-4 rounded-2xl relative overflow-hidden">
+                        <div class="h-48 rounded-xl bg-slate-800 flex flex-col items-center justify-center text-center p-4 relative" style="background-image: radial-gradient(#d97706 1px, transparent 1px); background-size: 16px 16px;">
+                            <div class="w-12 h-12 bg-white text-navy-950 rounded-full flex items-center justify-center p-1.5 animate-bounce shadow-lg">
+                                <img src="escudo.-removebg-preview.png" alt="NEOST" class="h-full w-auto object-contain">
+                            </div>
+                            <span class="text-white font-bold text-sm mt-2">Planta Principal NEOST</span>
+                            <span class="text-slate-400 text-xs">Visitas guiadas para comités escolares y empresas</span>
+                            <a href="https://maps.google.com" target="_blank" class="mt-3 bg-slate-900 text-gold-400 hover:text-white px-3 py-1.5 rounded-md text-xs font-semibold border border-slate-700">Ver en GPS Google Maps</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Interactive Dynamic Quotation Form -->
+                <div class="bg-slate-900 p-8 rounded-3xl border border-slate-800 shadow-2xl reveal">
+                    <h3 class="text-xl font-bold text-white mb-2">Cotizador Digital en Tiempo Real</h3>
+                    <p class="text-xs text-slate-400 mb-6">Calcula un estimado previo para tu pedido masivo institucional.</p>
+
+                    <form id="quote-form" onsubmit="handleQuoteSubmit(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Nombre / Institución</label>
+                            <input type="text" id="quote-name" required placeholder="Ej. Colegio San Martín / Empresa XYZ" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-500">
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1">Tipo de Uniforme</label>
+                                <select id="quote-type" onchange="calculateEstimate()" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-500">
+                                    <option value="45">Escolar Diario ($45/u)</option>
+                                    <option value="85">Universitario ($85/u)</option>
+                                    <option value="140">Ejecutivo Sastrería ($140/u)</option>
+                                    <option value="35">Calzado Cuero ($35/u)</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1">Cantidad de Piezas</label>
+                                <input type="number" id="quote-qty" min="10" value="50" oninput="calculateEstimate()" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-500">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Extras & Personalización</label>
+                            <div class="space-y-2 pt-1 text-xs text-slate-300">
+                                <label class="flex items-center space-x-2">
+                                    <input type="checkbox" id="extra-embroidery" onchange="calculateEstimate()" class="rounded accent-gold-500">
+                                    <span>Bordado de Escudo Digital (+ $3.50/u)</span>
+                                </label>
+                                <label class="flex items-center space-x-2">
+                                    <input type="checkbox" id="extra-antifluid" onchange="calculateEstimate()" class="rounded accent-gold-500">
+                                    <span>Tratamiento Textil Antifluido Premium (+ $5.00/u)</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Estimate Display -->
+                        <div class="bg-navy-950 p-4 rounded-xl border border-slate-800 flex justify-between items-center my-4">
+                            <div>
+                                <span class="text-xs text-slate-400 block">Estimado Total (Aprox):</span>
+                                <span id="quote-total" class="text-2xl font-extrabold text-gold-400">$2,425.00</span>
+                            </div>
+                            <span class="text-[10px] text-slate-500 bg-slate-800 px-2 py-1 rounded">Descuento Vol. Incluido</span>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Especificaciones Adicionales</label>
+                            <textarea id="quote-notes" rows="3" placeholder="Indica colores institucionales, fecha requerida o dudas..." class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-500"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-gradient-to-r from-gold-600 to-gold-500 hover:from-gold-500 hover:to-gold-400 text-navy-950 font-bold py-3.5 rounded-xl shadow-lg transition-all text-sm flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i> Enviar Solicitud Oficial
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION F: PIE DE PÁGINA (FOOTER COMPLETO) -->
+    <footer class="bg-navy-950 border-t border-slate-800 text-slate-400 pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+                
+                <!-- Col 1: Brand Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="h-10 w-auto bg-white/90 p-1 rounded-lg flex items-center justify-center shadow-md">
+                            <img src="escudo.-removebg-preview.png" alt="NEOST Logo" class="h-8 w-auto object-contain">
+                        </div>
+                        <div>
+                            <span class="text-xl font-extrabold text-white tracking-widest block leading-none">N E <span class="text-gold-500">O S T</span></span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Confección industrial de uniformes escolares, trajes ejecutivos y calzado institucional. Diseños que identifican a tu organización.
+                    </p>
+                    <div class="flex space-x-3 text-lg text-slate-400">
+                        <a href="#" class="hover:text-gold-400 transition-colors"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" class="hover:text-gold-400 transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="hover:text-gold-400 transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#" class="hover:text-gold-400 transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Navigation -->
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-4">Navegación</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#inicio" class="hover:text-gold-400 transition-colors">Inicio</a></li>
+                        <li><a href="#nosotros" class="hover:text-gold-400 transition-colors">Sobre Nosotros</a></li>
+                        <li><a href="#taller" class="hover:text-gold-400 transition-colors">Proceso de Confección</a></li>
+                        <li><a href="#servicios" class="hover:text-gold-400 transition-colors">Paquetes Institucionales</a></li>
+                        <li><a href="#productos" class="hover:text-gold-400 transition-colors">Catálogo Completo</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Secondary Links & Support -->
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-4">Atención & Legal</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#" onclick="showPolicyModal('Tallas')" class="hover:text-gold-400 transition-colors">Guía General de Tallas</a></li>
+                        <li><a href="#" onclick="showPolicyModal('Envíos')" class="hover:text-gold-400 transition-colors">Políticas de Envío y Entregas</a></li>
+                        <li><a href="#" onclick="showPolicyModal('Garantía')" class="hover:text-gold-400 transition-colors">Garantía de Telas y Costuras</a></li>
+                        <li><a href="#" onclick="showPolicyModal('Privacidad')" class="hover:text-gold-400 transition-colors">Política de Privacidad</a></li>
+                        <li><a href="#" onclick="showPolicyModal('Términos')" class="hover:text-gold-400 transition-colors">Términos y Condiciones</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Business Hours & Newsletter -->
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-4">Horario de Planta</h4>
+                    <p class="text-xs mb-2"><i class="fa-regular fa-clock text-gold-500 mr-2"></i>Lunes a Viernes: 08:00 - 18:00</p>
+                    <p class="text-xs mb-4"><i class="fa-regular fa-clock text-gold-500 mr-2"></i>Sábados: 09:00 - 13:00</p>
+                    <div class="mt-4">
+                        <span class="text-xs text-white font-semibold block mb-2">Recibe Catálogo PDF Anual</span>
+                        <div class="flex">
+                            <input type="email" placeholder="Tu correo electrónico" class="bg-slate-800 text-xs px-3 py-2 rounded-l-lg border border-slate-700 text-white focus:outline-none w-full">
+                            <button onclick="subscribeNewsletter()" class="bg-gold-500 text-navy-950 font-bold px-3 py-2 rounded-r-lg text-xs hover:bg-gold-400">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800/80 pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500">
+                <p>&copy; 2026 NEOST - Uniformes Que Identifican. Todos los derechos reservados. Confección industrial de alta precisión.</p>
+                <p class="mt-2 md:mt-0">Diseñado con excelencia UX & Parallax FX</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- PRODUCT DETAIL MODAL -->
+    <div id="product-modal" class="fixed inset-0 z-50 hidden bg-navy-950/80 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl relative text-slate-800 max-h-[90vh] overflow-y-auto">
+            <button onclick="closeProductModal()" class="absolute top-4 right-4 bg-slate-100 hover:bg-slate-200 text-slate-700 w-10 h-10 rounded-full flex items-center justify-center z-10 transition-colors">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div class="grid md:grid-cols-2">
+                <img id="modal-img" src="" alt="Producto" class="h-72 md:h-full w-full object-cover">
+                <div class="p-6 flex flex-col justify-between">
+                    <div>
+                        <span id="modal-category" class="text-xs font-bold uppercase tracking-wider text-gold-600">Categoría</span>
+                        <h3 id="modal-title" class="text-2xl font-bold text-navy-950 mt-1">Nombre Producto</h3>
+                        <div class="flex items-center space-x-2 my-2">
+                            <div class="text-gold-500 text-xs">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <span class="text-xs text-slate-500 font-semibold">(4.9/5 reseña institucional)</span>
+                        </div>
+                        <p id="modal-price" class="text-2xl font-extrabold text-navy-950 my-3">$0.00</p>
+                        <p id="modal-desc" class="text-xs text-slate-600 leading-relaxed mb-4">Descripción detallada del material y durabilidad.</p>
+                        
+                        <!-- Variants -->
+                        <div class="space-y-3 mb-6">
+                            <div>
+                                <label class="text-xs font-bold text-slate-700 block mb-1">Talla Disponible:</label>
+                                <div class="flex space-x-2" id="modal-sizes">
+                                    <button class="px-2.5 py-1 text-xs border rounded hover:border-gold-500">S</button>
+                                    <button class="px-2.5 py-1 text-xs border rounded hover:border-gold-500">M</button>
+                                    <button class="px-2.5 py-1 text-xs border rounded hover:border-gold-500">L</button>
+                                    <button class="px-2.5 py-1 text-xs border rounded hover:border-gold-500">XL</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <button id="modal-add-btn" class="w-full bg-navy-950 hover:bg-slate-800 text-white font-bold py-3 rounded-xl transition-all text-sm flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-cart-plus"></i> Añadir a la Cotización
+                        </button>
+                        <p class="text-[10px] text-center text-slate-500"><i class="fa-solid fa-truck-fast mr-1"></i> Despacho masivo garantizado a todo el país.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CART / QUOTATION MODAL -->
+    <div id="cart-modal" class="fixed inset-0 z-50 hidden bg-navy-950/80 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 shadow-2xl relative text-slate-800">
+            <div class="flex items-center justify-between pb-4 border-b border-slate-200">
+                <h3 class="text-xl font-bold text-navy-950"><i class="fa-solid fa-list-check text-gold-600 mr-2"></i>Resumen de Cotización</h3>
+                <button onclick="toggleCartModal()" class="text-slate-400 hover:text-slate-600">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+
+            <div id="cart-items" class="py-4 space-y-3 max-h-60 overflow-y-auto">
+                <!-- Cart Items Inserted by JS -->
+            </div>
+
+            <div class="pt-4 border-t border-slate-200 space-y-4">
+                <div class="flex justify-between items-center font-bold text-lg">
+                    <span>Estimado Previo:</span>
+                    <span id="cart-total-price" class="text-gold-600">$0.00</span>
+                </div>
+                <button onclick="finalizeCartQuote()" class="w-full bg-gold-500 hover:bg-gold-400 text-navy-950 font-bold py-3 rounded-xl text-sm transition-all">
+                    Procesar con un Asesor Comercial
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Data Source: Catalog Products
+        const products = [
+            {
+                id: 1,
+                name: 'Camisa Polo Escolar Piqué',
+                category: 'escolar',
+                price: 22.50,
+                image: 'https://images.unsplash.com/photo-1625910513413-21319342f2a0?q=80&w=600&auto=format&fit=crop',
+                desc: 'Algodón Pima con poliéster antifluido. No pierde color tras lavados intensivos. Incluye cuello reforzado.',
+                sizes: ['Niño 8-12', 'S', 'M', 'L']
+            },
+            {
+                id: 2,
+                name: 'Pantalón Escolar Dobby Antifluidos',
+                category: 'escolar',
+                price: 28.00,
+                image: 'https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=600&auto=format&fit=crop',
+                desc: 'Costuras reforzadas de triple puntada, pretina ajustable interna y tejido repelente a manchas líquidas.',
+                sizes: ['28', '30', '32', '34']
+            },
+            {
+                id: 3,
+                name: 'Blazer Universitario Lana Fría',
+                category: 'universitario',
+                price: 65.00,
+                image: 'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?q=80&w=600&auto=format&fit=crop',
+                desc: 'Sastrería ejecutiva para facultades e institutos. Forro interno satinado y solapa clásica.',
+                sizes: ['S', 'M', 'L', 'XL']
+            },
+            {
+                id: 4,
+                name: 'Traje Ejecutivo Slim Fit 2 Piezas',
+                category: 'trajes',
+                price: 135.00,
+                image: 'https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?q=80&w=600&auto=format&fit=crop',
+                desc: 'Confeccionado en paño de lana sintética de alta resistencia al desgaste. Ideal para altos mandos.',
+                sizes: ['38R', '40R', '42R', '44R']
+            },
+            {
+                id: 5,
+                name: 'Zapato Mocasín Cuero Escolar/Ejecutivo',
+                category: 'calzado',
+                price: 42.00,
+                image: 'https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?q=80&w=600&auto=format&fit=crop',
+                desc: 'Cuero 100% natural transpirable con suela antideslizante de caucho inyectado.',
+                sizes: ['36', '38', '40', '42', '44']
+            },
+            {
+                id: 6,
+                name: 'Falda Escolar Plisada Institucional',
+                category: 'escolar',
+                price: 26.00,
+                image: 'https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?q=80&w=600&auto=format&fit=crop',
+                desc: 'Plisado permanente que conserva la forma tras el lavado. Tela escocesa o monocolor.',
+                sizes: ['12', '14', 'S', 'M']
+            },
+            {
+                id: 7,
+                name: 'Saco Tejido de Punto Universitario',
+                category: 'universitario',
+                price: 38.00,
+                image: 'https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?q=80&w=600&auto=format&fit=crop',
+                desc: 'Hilado acrílico antialérgico, ligero pero térmico para temporadas de frío.',
+                sizes: ['S', 'M', 'L', 'XL']
+            },
+            {
+                id: 8,
+                name: 'Calzado Oxford Sastrería',
+                category: 'calzado',
+                price: 49.00,
+                image: 'https://images.unsplash.com/photo-1533867617858-e7b97e060509?q=80&w=600&auto=format&fit=crop',
+                desc: 'Elegancia y confort para uniforme corporativo. Acabado en lustre brillante.',
+                sizes: ['39', '40', '41', '42', '43']
+            }
+        ];
+
+        let cart = [];
+
+        // Initialize Render
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProducts(products);
+            calculateEstimate();
+            setupScrollReveal();
+        });
+
+        // Render Product Cards
+        function renderProducts(items) {
+            const grid = document.getElementById('product-grid');
+            grid.innerHTML = items.map(p => `
+                <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between card-tilt group">
+                    <div class="relative overflow-hidden h-52">
+                        <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 bg-navy-950/80 text-gold-400 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase backdrop-blur-sm">${p.category}</span>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-bold text-navy-950 text-base mb-1">${p.name}</h3>
+                            <p class="text-xs text-slate-500 line-clamp-2 mb-3">${p.desc}</p>
+                        </div>
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-xl font-extrabold text-navy-950">$${p.price.toFixed(2)}</span>
+                                <span class="text-xs text-gold-600 font-semibold"><i class="fa-solid fa-star"></i> 4.9</span>
+                            </div>
+                            <div class="grid grid-cols-2 gap-2">
+                                <button onclick="openProductModal(${p.id})" class="bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold py-2 rounded-lg text-xs transition-colors">
+                                    Detalles
+                                </button>
+                                <button onclick="addToCart(${p.id})" class="bg-gold-500 hover:bg-gold-400 text-navy-950 font-bold py-2 rounded-lg text-xs transition-colors">
+                                    + Cotizar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Filter Products
+        function filterProducts(category) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active', 'bg-navy-950', 'text-white'));
+            buttons.forEach(btn => btn.classList.add('bg-white', 'text-slate-700'));
+
+            event.target.classList.add('active', 'bg-navy-950', 'text-white');
+            event.target.classList.remove('bg-white', 'text-slate-700');
+
+            if (category === 'todos') {
+                renderProducts(products);
+            } else {
+                const filtered = products.filter(p => p.category === category);
+                renderProducts(filtered);
+            }
+        }
+
+        // Product Modal Functions
+        function openProductModal(id) {
+            const p = products.find(item => item.id === id);
+            if (!p) return;
+
+            document.getElementById('modal-img').src = p.image;
+            document.getElementById('modal-title').innerText = p.name;
+            document.getElementById('modal-category').innerText = p.category;
+            document.getElementById('modal-price').innerText = `$${p.price.toFixed(2)}`;
+            document.getElementById('modal-desc').innerText = p.desc;
+
+            const sizesContainer = document.getElementById('modal-sizes');
+            sizesContainer.innerHTML = p.sizes.map(s => `<button class="px-2.5 py-1 text-xs border border-slate-300 rounded hover:border-gold-500 hover:bg-gold-50">${s}</button>`).join('');
+
+            document.getElementById('modal-add-btn').onclick = () => {
+                addToCart(p.id);
+                closeProductModal();
+            };
+
+            document.getElementById('product-modal').classList.remove('hidden');
+        }
+
+        function closeProductModal() {
+            document.getElementById('product-modal').classList.add('hidden');
+        }
+
+        // Cart & Quotation Functions
+        function addToCart(id) {
+            const p = products.find(item => item.id === id);
+            const existing = cart.find(item => item.id === id);
+
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                cart.push({ ...p, qty: 1 });
+            }
+
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const count = cart.reduce((acc, item) => acc + item.qty, 0);
+            document.getElementById('cart-badge').innerText = count;
+            document.getElementById('cart-badge-mobile').innerText = count;
+
+            const cartContainer = document.getElementById('cart-items');
+            if (cart.length === 0) {
+                cartContainer.innerHTML = '<p class="text-xs text-slate-400 text-center py-4">No has agregado artículos a la cotización.</p>';
+            } else {
+                cartContainer.innerHTML = cart.map(item => `
+                    <div class="flex items-center justify-between text-xs border-b border-slate-100 pb-2">
+                        <div>
+                            <span class="font-bold text-navy-950 block">${item.name}</span>
+                            <span class="text-slate-500">$${item.price.toFixed(2)} x ${item.qty}</span>
+                        </div>
+                        <span class="font-bold text-gold-600">$${(item.price * item.qty).toFixed(2)}</span>
+                    </div>
+                `).join('');
+            }
+
+            const total = cart.reduce((acc, item) => acc + (item.price * item.qty), 0);
+            document.getElementById('cart-total-price').innerText = `$${total.toFixed(2)}`;
+        }
+
+        function toggleCartModal() {
+            document.getElementById('cart-modal').classList.toggle('hidden');
+        }
+
+        function finalizeCartQuote() {
+            if (cart.length === 0) {
+                alert('Por favor agrega al menos un producto a la lista de cotización.');
+                return;
+            }
+            alert('¡Lista de cotización recibida! Un ejecutivo comercial de NEOST se pondrá en contacto en breve.');
+            cart = [];
+            updateCartUI();
+            toggleCartModal();
+        }
+
+        // Real-time Quote Estimator
+        function calculateEstimate() {
+            const basePrice = parseFloat(document.getElementById('quote-type').value) || 0;
+            const qty = parseInt(document.getElementById('quote-qty').value) || 0;
+
+            let extraCost = 0;
+            if (document.getElementById('extra-embroidery').checked) extraCost += 3.50;
+            if (document.getElementById('extra-antifluid').checked) extraCost += 5.00;
+
+            let total = (basePrice + extraCost) * qty;
+
+            // Volume discount
+            if (qty >= 100) total *= 0.90; // 10% off
+
+            document.getElementById('quote-total').innerText = `$${total.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+        }
+
+        function preselectPackage(packageName) {
+            document.getElementById('quote-notes').value = `Interesado en cotización masiva para: ${packageName}`;
+        }
+
+        function handleQuoteSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('quote-name').value;
+            alert(`Gracias ${name}, tu solicitud de cotización oficial ha sido registrada. Te enviaremos el dossier en PDF a la brevedad.`);
+            document.getElementById('quote-form').reset();
+            calculateEstimate();
+        }
+
+        function showPolicyModal(title) {
+            alert(`Documento Informativo: Se desplegarán los términos de ${title} en formato PDF oficial.`);
+        }
+
+        function subscribeNewsletter() {
+            alert('¡Gracias por suscribirte! Recibirás nuestro catálogo anual interactivo en tu correo.');
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        }
+
+        // ScrollReveal Animation Handler
+        function setupScrollReveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            reveals.forEach(el => observer.observe(el));
+        }
+    </script>
+</body>
+</html>
